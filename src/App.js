@@ -6,6 +6,7 @@ import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
 import Price from "./components/Price";
 import Services from "./components/Services";
+import {BrowserRouter as Router} from 'react-router-dom';
 
 const Container= styled.div`
 height: 100vh;
@@ -53,24 +54,25 @@ function App() {
   const smallScreen = window.screen.width <=480 ? true : false
   return (
     <>
+    <Router>
     <Container>
      <Navbar/>
      <Intro />
      <IntroShape />
     </Container>
 
-    <Container>
+    <Container id="Feature">
       <Feature/>
       <FeatureShape/>
     </Container>
 
 
-    <Container>
+    <Container id="Services">
       <Services />
       {!smallScreen && <ServiceShape />}
     </Container>
 
-    <Container>
+    <Container id="">
       <Price />
       <PriceShape />
     </Container>
@@ -79,7 +81,7 @@ function App() {
       <Contact />
       <Footer /> 
     </Container>
-
+    </Router>
     </>
   );
 }

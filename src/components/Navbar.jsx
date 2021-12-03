@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     height: 50px;
@@ -30,11 +31,12 @@ list-style: none;
   display: none;
 }
 `
-const MenuItem = styled.li`
+const MenuItem = styled(Link)`
 margin-right: 30px;
 font-size: 20px;
 font-weight: bold;
 color: #527979;
+text-decoration: none;
 `
 const Button = styled.button`
   border:2px solid black;
@@ -50,11 +52,11 @@ const Navbar = () => {
           <Wrapper>
            <Left><Logo>Agency</Logo>
            <Menu>
-               <MenuItem>Home</MenuItem>
-               <MenuItem>Features</MenuItem>
-               <MenuItem>Services</MenuItem>
-               <MenuItem>Pricing</MenuItem>
-               <MenuItem>Contact</MenuItem>
+               <MenuItem to="/">Home</MenuItem>
+               <MenuItem to="/#Feature">Features</MenuItem>
+               <MenuItem to="/#Services">Services</MenuItem>
+               <MenuItem to="/#Pricing">Pricing</MenuItem>
+               <MenuItem to="/#Contact">Contact</MenuItem>
 
                
             </Menu></Left>
